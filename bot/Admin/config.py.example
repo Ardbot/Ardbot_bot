@@ -1,0 +1,3 @@
+TOKEN = "8******:A*************E"
+ADMIN_ID = '2****2'
+DB = "Database\db_name.db"  # путь к файлу
