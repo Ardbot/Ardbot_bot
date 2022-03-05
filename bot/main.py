@@ -6,6 +6,8 @@ from aiogram import Bot
 from aiogram.types import BotCommand
 
 from bot.Admin.create_bot import dp, bot
+from bot.Client.handlers.menu import register_handlers_menu
+from bot.Other.handlers.other import register_handlers_other
 
 
 async def on_startup():
@@ -27,7 +29,8 @@ async def main():
 
     """ Регистрация основных хэндлеров """
 
-    # other.register_handlers_other(dp)
+    register_handlers_menu(dp)
+    register_handlers_other(dp)
 
     """ Запуск поллинга """
     await dp.start_polling()
