@@ -3,7 +3,7 @@
 from aiogram import Bot, Dispatcher
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 
-from bot.General.setting_bot import config
+from bot.Admin import config
 
 """ Объявление и инициализация объектов бота и диспетчера """
 bot = Bot(token=config.TOKEN)
