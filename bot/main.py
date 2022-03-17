@@ -2,35 +2,25 @@
 # -*- coding: utf-8 -*-
 import asyncio
 
-from aiogram import Bot
-from aiogram.types import BotCommand
-
-from bot.Admin.create_bot import dp, bot
-from bot.Client.handlers.menu import register_handlers_menu
-from bot.Other.handlers.other import register_handlers_other
+from bot.General.setting_bot.create_bot import dp, bot
+from bot.Ardbot.handlers.menu_ardbot import register_handlers_ardbot_menu
+from bot.General.handlers.cmd_general import set_commands, register_handlers_general_other, register_handlers_general_commands
 
 
 async def on_startup():
     print(" Бот в онлайн ")
 
 
-async def set_commands(bot: Bot):
-    commands = [
-        BotCommand(command="/start", description="Старт"),
-        BotCommand(command="/website", description="Сайт"),
-        BotCommand(command="/project", description="Мои проекты")
-    ]
-    await bot.set_my_commands(commands)
-
-
 async def main():
     await on_startup()      # Уведомляем о старте
-    await set_commands(bot)  # Устанавливаем команды бота
+    await set_commands(bot)  # Устанавливаем команды бота (General)
 
     """ Регистрация основных хэндлеров """
+    register_handlers_general_commands(dp)
+    register_handlers_ardbot_menu(dp)
 
-    register_handlers_menu(dp)
-    register_handlers_other(dp)
+    """ Последний хендлер """
+    register_handlers_general_other(dp)
 
     """ Запуск поллинга """
     await dp.start_polling()
