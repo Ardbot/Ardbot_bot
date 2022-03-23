@@ -5,6 +5,8 @@ import asyncio
 from bot.General.setting_bot.create_bot import dp, bot
 from bot.Ardbot.handlers.menu_ardbot import register_handlers_ardbot_menu
 from bot.General.handlers.cmd_general import set_commands, register_handlers_general_other, register_handlers_general_commands
+from bot.Microservices.Microservices import register_handlers_microservices
+from bot.Microservices.Yotube_backup.Yotube_backup import register_handlers_yotube_backup
 
 
 async def on_startup():
@@ -18,6 +20,11 @@ async def main():
     """ Регистрация основных хэндлеров """
     register_handlers_general_commands(dp)
     register_handlers_ardbot_menu(dp)
+
+    """ Регистрация микросервисов """
+    register_handlers_microservices(dp)
+    register_handlers_yotube_backup(dp)
+
 
     """ Последний хендлер """
     register_handlers_general_other(dp)
