@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/bot/Microservices/Yotube_backup/markups" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/bot/Microservices/markups" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/Microservices/Yotube_backup/YB_bot/markups" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/Microservices/markups" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/bot/Template/markups" charset="windows-1251" />
   </component>
 </project>

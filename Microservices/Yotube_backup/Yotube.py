@@ -42,8 +42,8 @@ def subscriptions(id_channels, nextPageToken=''):
                 }
                 # print(list_user)
 
-                # with open(f'{id_channels}.json', 'w') as f:
-                #     json.dump(list_user, f, ensure_ascii=False)
+                with open(f'{id_channels}.json', 'w') as f:
+                    json.dump(list_user, f, ensure_ascii=False, indent=2)
                 return list_user
 
             # print("Следующая страница:\n")
@@ -55,9 +55,20 @@ def subscriptions(id_channels, nextPageToken=''):
             print(msg)
             return msg
 
+def channels(id_channels2='UC__hk2pt088MDmH-f1dzMcw', API2='AIzaSyBvJBNM9_q_zQJTLgKlWLXTmlwMc3KKv8s'):
+    url = f'https://youtube.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id={id_channels2}&key={API2}'
+    response = requests.get(url)
+    print(url)
+    print(response.text)
+# https://www.googleapis.com/youtube/v3/videos?part=statistics&id=mxnTXNwZzlo&key=AIzaSyBvJBNM9_q_zQJTLgKlWLXTmlwMc3KKv8s
+
+
+
+
 
 
 
 
 if __name__ == '__main__':
-    subscriptions(id_channels)
+    # subscriptions(id_channels)
+    channels()
