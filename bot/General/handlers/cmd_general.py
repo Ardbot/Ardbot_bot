@@ -23,6 +23,9 @@ async def cmd_start(message: types.Message, state: FSMContext):
     await state.finish()
     await message.answer("Приветствую!", reply_markup=reply_general.general_menu)
 
+    with open('start_log.txt', mode='a', encoding='utf-8') as f:
+        f.write(f"{message.from_user.id}'\n'")
+
 
 async def cmd_cancel(message: types.Message, state: FSMContext):
     """ Отмена состояния машины и возврат в главное меню """

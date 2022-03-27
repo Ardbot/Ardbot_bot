@@ -7,6 +7,8 @@ general_menu.add("Помощь")
 
 cancel = "Отмена"
 
+menu_cancel = ReplyKeyboardMarkup(resize_keyboard=True).add(cancel)
+
 # list_services = ReplyKeyboardMarkup(resize_keyboard=True).add("Проект 1", "Проект 2", "Об авторе")
 # list_services.add(cancel)
 

@@ -2,8 +2,7 @@ from aiogram import types, Dispatcher
 from aiogram.dispatcher.filters import Text
 from aiogram.types import callback_query
 
-from bot.Ardbot.markups.inline_ardbot import inl_kb_project, inl_kb_contacts
-from bot.General.markups.inline_general import inline_kb1
+from bot.General.markups.inline_general import inline_kb1, inl_kb_project, inl_kb_contacts
 from bot.General.setting_bot.create_bot import bot
 
 
